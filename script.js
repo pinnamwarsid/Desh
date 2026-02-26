@@ -133,12 +133,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Music functionality
+    // Music functionality with fallback
     const musicBtn = document.getElementById('music-btn');
     const backgroundMusic = document.getElementById('background-music');
     let isMusicPlaying = false;
 
     if (musicBtn && backgroundMusic) {
+        // Try to load the local file first
+        backgroundMusic.addEventListener('error', function() {
+            console.log('Local music file not found, using fallback');
+            // Fallback to a free audio source
+            backgroundMusic.innerHTML = `
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            `;
+            backgroundMusic.load();
+        });
+
         musicBtn.addEventListener('click', () => {
             if (isMusicPlaying) {
                 backgroundMusic.pause();
@@ -153,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }).catch(error => {
                     console.log('Autoplay prevented:', error);
                     // Show a message to manually start music
-                    alert('Click the music button to start playing the song!');
+                    alert('Click the music button to start playing! 🎵');
                 });
             }
         });

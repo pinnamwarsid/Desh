@@ -155,20 +155,45 @@ document.addEventListener('DOMContentLoaded', function() {
                 musicBtn.textContent = '🎵';
                 musicBtn.classList.remove('playing');
                 isMusicPlaying = false;
+                // Hide lyrics when music stops
+                const lyrics = document.querySelector('.song-lyrics');
+                if (lyrics) lyrics.style.display = 'none';
             } else {
                 backgroundMusic.play().then(() => {
                     musicBtn.textContent = '⏸️';
                     musicBtn.classList.add('playing');
                     isMusicPlaying = true;
+                    // Show romantic lyrics when music starts
+                    showRomanticLyrics();
                 }).catch(error => {
                     console.log('Autoplay prevented:', error);
-                    // Show a message to manually start music
                     alert('Click the music button to start playing! 🎵');
                 });
             }
         });
     }
-    
+
+    // Function to show romantic lyrics (including "Kaadhal en kaviye" theme)
+    function showRomanticLyrics() {
+        // Create or show lyrics section
+        let lyrics = document.querySelector('.song-lyrics');
+        if (!lyrics) {
+            lyrics = document.createElement('div');
+            lyrics.className = 'song-lyrics';
+            lyrics.innerHTML = `
+                <div class="lyrics-container">
+                    <h3>🎵 Kaadhal en kaviye... 🎵</h3>
+                    <p>For my dearest friend, my heart's melody...</p>
+                    <p>Love flows like poetry through every moment we share</p>
+                    <p>Every beat echoes with memories so sweet</p>
+                    <div class="heart-animation">❤️</div>
+                </div>
+            `;
+            document.body.appendChild(lyrics);
+        }
+        lyrics.style.display = 'block';
+    }
+
     // Add more impressive animations to various elements
     function addImpressiveAnimations() {
         // Add pulse animation to buttons

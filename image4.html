@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory 4 | Our Beautiful Story</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="image-body">
+    <!-- Floating Hearts Container -->
+    <div class="floating-hearts"></div>
+    
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">🏠 Home</a>
+        <a href="gallery.html" class="nav-link">📸 Gallery</a>
+        <a href="quotes.html" class="nav-link">💬 Quotes</a>
+        <a href="message.html" class="nav-link">💌 Message</a>
+    </nav>
+
+    <!-- Individual Image Page -->
+    <section class="image-page">
+        <div class="container">
+            <div class="image-container">
+                <img src="./img/cb0133f6-fb66-48b0-aff4-4e6263403992.jpeg" alt="Memory 4" class="large-image">
+            </div>
+            
+            <div class="image-story">
+                <h2>Adventures Together</h2>
+                <div class="story-text">
+                    <p>Another adventure captured in time! This photo represents our shared spirit of adventure and our willingness to explore the world together.</p>
+                    <p>Every journey with you is filled with discovery, excitement, and memories that last a lifetime. Thank you for being the perfect adventure companion.</p>
+                </div>
+                
+                <blockquote class="image-quote" id="quote4">
+                    "Adventure is worthwhile." - Aesop
+                </blockquote>
+            </div>
+            
+            <div class="back-button-container">
+                <a href="gallery.html" class="back-button">← Back to Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Typing effect for the quote
+        function typeWriter(element, text, speed = 30) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Apply typing animation to the quote when page loads
+        window.addEventListener('DOMContentLoaded', function() {
+            const quoteElement = document.getElementById('quote4');
+            const fullText = '"Adventure is worthwhile." - Aesop';
+            
+            // Add a slight delay before starting the typing effect
+            setTimeout(() => {
+                typeWriter(quoteElement, fullText, 40);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

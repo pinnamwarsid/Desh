@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship Quotes | Heartfelt Words</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="quotes-body">
+    <!-- Floating Hearts Container -->
+    <div class="floating-hearts"></div>
+    
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">🏠 Home</a>
+        <a href="gallery.html" class="nav-link">📸 Gallery</a>
+        <a href="message.html" class="nav-link">💌 Message</a>
+        <a href="surprise.html" class="nav-link">🎉 Surprise</a>
+    </nav>
+
+    <!-- Quotes Page -->
+    <section class="quotes-page">
+        <div class="container">
+            <h1>Words That Express Our Friendship</h1>
+            <p class="subtitle">These quotes capture the essence of what our friendship means to me</p>
+            
+            <div class="quotes-container">
+                <div class="quote-card active" id="quote1">
+                    "A best friend is someone who makes your world brighter."
+                </div>
+                <div class="quote-card" id="quote2">
+                    "True friendship is a kind of love that never fades."
+                </div>
+                <div class="quote-card" id="quote3">
+                    "In the sweetness of friendship let there be laughter, and sharing of pleasures."
+                </div>
+                <div class="quote-card" id="quote4">
+                    "A friend is one soul in two bodies."
+                </div>
+                <div class="quote-card" id="quote5">
+                    "The most beautiful discovery true friends make is that they can grow separately without growing apart."
+                </div>
+                <div class="quote-card" id="quote6">
+                    "Friendship is born at that moment when one person says to another: What! You too? I thought I was the only one."
+                </div>
+                <div class="quote-card" id="quote7">
+                    "A true friend is someone who sees the first tear, catches the second, and stops the third."
+                </div>
+                <div class="quote-card" id="quote8">
+                    "Friends are the family we choose for ourselves."
+                </div>
+                <div class="quote-card" id="quote9">
+                    "The best thing to hold onto in life is each other."
+                </div>
+                <div class="quote-card" id="quote10">
+                    "A friend is someone who knows all about you and still loves you."
+                </div>
+            </div>
+            
+            <div class="quote-navigation">
+                <button id="prev-quote" class="nav-btn">◀ Previous</button>
+                <span id="quote-counter">1 of 10</span>
+                <button id="next-quote" class="nav-btn">Next ▶</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Quotes carousel functionality
+        let currentQuoteIndex = 0;
+        const quotes = document.querySelectorAll('.quote-card');
+        const quoteCounter = document.getElementById('quote-counter');
+        const prevBtn = document.getElementById('prev-quote');
+        const nextBtn = document.getElementById('next-quote');
+        
+        function showQuote(index) {
+            // Hide all quotes
+            quotes.forEach(quote => {
+                quote.classList.remove('active');
+                quote.style.opacity = '0';
+                quote.style.transform = 'translateX(20px)';
+            });
+            
+            // Show current quote with animation
+            setTimeout(() => {
+                quotes[index].classList.add('active');
+                quotes[index].style.opacity = '1';
+                quotes[index].style.transform = 'translateX(0)';
+            }, 50);
+            
+            // Update counter
+            quoteCounter.textContent = `${index + 1} of ${quotes.length}`;
+            currentQuoteIndex = index;
+        }
+        
+        // Event listeners for navigation
+        nextBtn.addEventListener('click', () => {
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+            showQuote(currentQuoteIndex);
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            currentQuoteIndex = (currentQuoteIndex - 1 + quotes.length) % quotes.length;
+            showQuote(currentQuoteIndex);
+        });
+        
+        // Auto rotate quotes every 8 seconds
+        setInterval(() => {
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+            showQuote(currentQuoteIndex);
+        }, 8000);
+        
+        // Initialize first quote
+        showQuote(0);
+        
+        // Add typing effect to quotes
+        function typeWriter(element, text, speed = 30) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+        
+        // Apply typing effect to current quote
+        function applyTypingEffect() {
+            const activeQuote = document.querySelector('.quote-card.active');
+            if (activeQuote) {
+                const text = activeQuote.textContent;
+                activeQuote.textContent = '';
+                typeWriter(activeQuote, text, 40);
+            }
+        }
+        
+        // Apply typing effect to the first quote on load
+        window.addEventListener('DOMContentLoaded', function() {
+            setTimeout(applyTypingEffect, 500);
+        });
+    </script>
+</body>
+</html>

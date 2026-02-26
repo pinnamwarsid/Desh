@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory 1 | Our Beautiful Story</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="image-body">
+    <!-- Floating Hearts Container -->
+    <div class="floating-hearts"></div>
+    
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">🏠 Home</a>
+        <a href="gallery.html" class="nav-link">📸 Gallery</a>
+        <a href="quotes.html" class="nav-link">💬 Quotes</a>
+        <a href="message.html" class="nav-link">💌 Message</a>
+    </nav>
+
+    <!-- Individual Image Page -->
+    <section class="image-page">
+        <div class="container">
+            <div class="image-container">
+                <img src="./img/736d4ec5-f65c-4c5e-8fd4-a9570016af41.jpeg" alt="Memory 1" class="large-image">
+            </div>
+            
+            <div class="image-story">
+                <h2>Our First Adventure Together</h2>
+                <div class="story-text">
+                    <p>
+We fight… sometimes over the smallest things, sometimes over things that feel too big in the moment. 
+Words slip out, silence grows, and for a while, it feels like distance is winning. 
+But somehow… we always find our way back. Because between all the arguments, there’s something stronger — us.
+</p>
+
+<p>
+We laugh, we talk, we understand, and slowly, everything becomes okay again. 
+Not because we’re perfect… but because we choose each other, every single time. 
+And that’s what makes our bond special — no matter how many times we break into pieces, 
+we always sit down, fix it, and come back stronger. Because losing each other was never an option. ❤️
+</p>
+                </div>
+                
+                <blockquote class="image-quote" id="quote1">
+                    "A friend is one soul in two bodies." - Aristotle
+                </blockquote>
+            </div>
+            
+            <div class="back-button-container">
+                <a href="gallery.html" class="back-button">← Back to Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Typing effect for the quote
+        function typeWriter(element, text, speed = 30) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Apply typing animation to the quote when page loads
+        window.addEventListener('DOMContentLoaded', function() {
+            const quoteElement = document.getElementById('quote1');
+            const fullText = '"A friend is one soul in two bodies." - Aristotle';
+            
+            // Add a slight delay before starting the typing effect
+            setTimeout(() => {
+                typeWriter(quoteElement, fullText, 40);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

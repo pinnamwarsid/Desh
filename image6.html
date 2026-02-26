@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory 6 | Our Beautiful Story</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="image-body">
+    <!-- Floating Hearts Container -->
+    <div class="floating-hearts"></div>
+    
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">🏠 Home</a>
+        <a href="gallery.html" class="nav-link">📸 Gallery</a>
+        <a href="quotes.html" class="nav-link">💬 Quotes</a>
+        <a href="message.html" class="nav-link">💌 Message</a>
+    </nav>
+
+    <!-- Individual Image Page -->
+    <section class="image-page">
+        <div class="container">
+            <div class="image-container">
+                <img src="./img/62774245-f877-4dac-a0d5-042cb1717dcc.jpeg" alt="Memory 6" class="large-image">
+            </div>
+            
+            <div class="image-story">
+                <h2>Unbreakable Bond</h2>
+                <div class="story-text">
+                    <p>
+I know… sometimes I argue over the smallest things, things that don’t really matter, things that we could easily ignore. 
+And maybe it feels silly, maybe it even annoys you sometimes. But the truth is… those little arguments are never really about being right.
+</p>
+
+<p>
+They’re about how much I care. Because when someone means nothing, you don’t argue, you just let things go. 
+But with you… I can’t. Every small fight, every little disagreement is just another way of saying — you matter to me more than anything. ❤️
+</p>
+                </div>
+                
+                <blockquote class="image-quote" id="quote6">
+                    "A friend is someone who knows all about you and still loves you." - Elbert Hubbard
+                </blockquote>
+            </div>
+            
+            <div class="back-button-container">
+                <a href="gallery.html" class="back-button">← Back to Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Typing effect for the quote
+        function typeWriter(element, text, speed = 30) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Apply typing animation to the quote when page loads
+        window.addEventListener('DOMContentLoaded', function() {
+            const quoteElement = document.getElementById('quote6');
+            const fullText = '"A friend is someone who knows all about you and still loves you." - Elbert Hubbard';
+            
+            // Add a slight delay before starting the typing effect
+            setTimeout(() => {
+                typeWriter(quoteElement, fullText, 40);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

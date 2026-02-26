@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories | Friendship Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="gallery-body">
+    <!-- Floating Hearts Container -->
+    <div class="floating-hearts"></div>
+    
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">🏠 Home</a>
+        <a href="quotes.html" class="nav-link">💬 Quotes</a>
+        <a href="message.html" class="nav-link">💌 Message</a>
+        <a href="surprise.html" class="nav-link">🎉 Surprise</a>
+    </nav>
+
+    <!-- Gallery Page -->
+    <section class="gallery-page">
+        <div class="container">
+            <h1>Our Beautiful Memories</h1>
+            <p class="subtitle">Click on any photo to explore the story behind it</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item circular" onclick="openImagePage(1)">
+                    <img src="./img/736d4ec5-f65c-4c5e-8fd4-a9570016af41.jpeg" alt="Memory 1">
+                    <div class="image-overlay">
+                        <div class="overlay-content">View Story</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item circular" onclick="openImagePage(2)">
+                    <img src="./img/76133abc-a8a6-43e8-92de-00a08572dbba.jpeg" alt="Memory 2">
+                    <div class="image-overlay">
+                        <div class="overlay-content">View Story</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item circular" onclick="openImagePage(3)">
+                    <img src="./img/c039b79f-ceae-4d13-85e0-a9dd15745cf8.jpeg" alt="Memory 3">
+                    <div class="image-overlay">
+                        <div class="overlay-content">View Story</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item circular" onclick="openImagePage(4)">
+                    <img src="./img/cb0133f6-fb66-48b0-aff4-4e6263403992.jpeg" alt="Memory 4">
+                    <div class="image-overlay">
+                        <div class="overlay-content">View Story</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item circular" onclick="openImagePage(5)">
+                    <img src="./img/e1ef88c4-2a34-4fef-9274-867685b11e72.jpeg" alt="Memory 5">
+                    <div class="image-overlay">
+                        <div class="overlay-content">View Story</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item circular" onclick="openImagePage(6)">
+                    <img src="./img/62774245-f877-4dac-a0d5-042cb1717dcc.jpeg" alt="Memory 6">
+                    <div class="image-overlay">
+                        <div class="overlay-content">View Story</div>
+                    </div>
+                </div>
+                
+                <div class="gallery-item circular" onclick="openImagePage(7)">
+                    <img src="./img/71e60e03-10bd-40e4-a1c5-3fdf9d523a24.jpeg" alt="Memory 7">
+                    <div class="image-overlay">
+                        <div class="overlay-content">View Story</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Function to navigate to individual image page
+        function openImagePage(imageNumber) {
+            window.location.href = `image${imageNumber}.html`;
+        }
+    </script>
+</body>
+</html>

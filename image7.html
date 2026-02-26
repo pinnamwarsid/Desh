@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory 7 | Our Beautiful Story</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="image-body">
+    <!-- Floating Hearts Container -->
+    <div class="floating-hearts"></div>
+    
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">🏠 Home</a>
+        <a href="gallery.html" class="nav-link">📸 Gallery</a>
+        <a href="quotes.html" class="nav-link">💬 Quotes</a>
+        <a href="message.html" class="nav-link">💌 Message</a>
+    </nav>
+
+    <!-- Individual Image Page -->
+    <section class="image-page">
+        <div class="container">
+            <div class="image-container">
+                <img src="./img/71e60e03-10bd-40e4-a1c5-3fdf9d523a24.jpeg" alt="Memory 7" class="large-image">
+            </div>
+            
+            <div class="image-story">
+                <h2>Grateful for You</h2>
+                <div class="story-text">
+                    <p>
+I don’t know what the future holds for us… I don’t know if life will always keep us together. 
+Maybe time will change things, maybe distance will come between us… but one thing I know for sure — my care for you will never change.
+</p>
+
+<p>
+If you ever feel alone, like no one understands you, like no one is there… just remember this — my shoulder is always waiting for you. 
+I may not always be beside you, but I will always stand for you, to protect you, to care for you, until the very end. ❤️
+</p>
+                </div>
+                
+                <blockquote class="image-quote" id="quote7">
+                    "Thank you for being the friend I could count on no matter what. Your friendship means everything to me." - Anonymous
+                </blockquote>
+            </div>
+            
+            <div class="back-button-container">
+                <a href="gallery.html" class="back-button">← Back to Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Typing effect for the quote
+        function typeWriter(element, text, speed = 30) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Apply typing animation to the quote when page loads
+        window.addEventListener('DOMContentLoaded', function() {
+            const quoteElement = document.getElementById('quote7');
+            const fullText = '"Thank you for being the friend I could count on no matter what. Your friendship means everything to me." - Anonymous';
+            
+            // Add a slight delay before starting the typing effect
+            setTimeout(() => {
+                typeWriter(quoteElement, fullText, 40);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

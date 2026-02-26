@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Message | From My Heart</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="message-body">
+    <!-- Floating Hearts Container -->
+    <div class="floating-hearts"></div>
+    
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">🏠 Home</a>
+        <a href="gallery.html" class="nav-link">📸 Gallery</a>
+        <a href="quotes.html" class="nav-link">💬 Quotes</a>
+        <a href="surprise.html" class="nav-link">🎉 Surprise</a>
+    </nav>
+
+    <!-- Message Page -->
+    <section class="message-page">
+        <div class="container">
+            <h1>A Message From My Heart</h1>
+            <p class="subtitle">To my dearest friend, with all my love</p>
+            
+            <div class="message-container">
+                <div class="heart-divider">❤️</div>
+                
+                <div class="long-message">
+                    <p id="typed-message">My Dearest Friend,</p>
+                    
+                    <p>As I sit down to write this, my heart is filled with emotions that words can barely capture. Our friendship has been one of the most beautiful gifts life has given me.</p>
+                    
+                    <p>Through all the ups and downs, laughter and tears, you've been there by my side. Your kindness, warmth, and unwavering support have shaped who I am today. True friendship like ours is rare and beautiful - a bond that transcends distance, time, and circumstances.</p>
+                    
+                    <p>I am grateful for every moment we've shared, every laugh we've enjoyed together, and every challenge we've overcome side by side. Your presence in my life adds color to everything, making ordinary days extraordinary.</p>
+                    
+                    <p>You have this incredible ability to make me feel understood and accepted just as I am. In a world that can sometimes feel cold and distant, you are my warm embrace, my safe harbor.</p>
+                    
+                    <p>I want you to know how much you mean to me. Not just as a friend, but as a soul who adds beauty to my existence. Your friendship is treasured beyond words, cherished beyond measure.</p>
+                    
+                    <p>Thank you for being the incredible person you are. Thank you for choosing to walk through life beside me. Thank you for being the light in my world.</p>
+                    
+                    <p>With all my love and deepest gratitude,</p>
+                    
+                    <p>Your devoted friend</p>
+                </div>
+                
+                <div class="heart-divider">❤️</div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Typing effect for the opening message
+        function typeWriter(element, text, speed = 30) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Apply typing animation to the opening message when page loads
+        window.addEventListener('DOMContentLoaded', function() {
+            const typedElement = document.getElementById('typed-message');
+            const fullText = 'My Dearest Friend,';
+            
+            // Add a slight delay before starting the typing effect
+            setTimeout(() => {
+                typeWriter(typedElement, fullText, 50);
+            }, 1000);
+        });
+        
+        // Add staggered typing effect to paragraphs
+        function applyStaggeredTyping() {
+            const paragraphs = document.querySelectorAll('.long-message p');
+            paragraphs.forEach((p, index) => {
+                if (index === 0) return; // Skip the first one as it already has typing effect
+                
+                setTimeout(() => {
+                    p.style.opacity = '0';
+                    p.style.transform = 'translateY(20px)';
+                    p.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    
+                    setTimeout(() => {
+                        p.style.opacity = '1';
+                        p.style.transform = 'translateY(0)';
+                    }, 50);
+                }, index * 1000);
+            });
+        }
+        
+        // Apply staggered effect after the first message is typed
+        setTimeout(applyStaggeredTyping, 3000);
+    </script>
+</body>
+</html>

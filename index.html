@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Best Friend ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating Hearts Container -->
+    <div class="floating-hearts"></div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>For My Best Friend ❤️</h1>
+            <p>A tribute to the most amazing person in my life</p>
+        </div>
+    </section>
+
+    <!-- About Our Friendship Section -->
+    <section class="about-friendship">
+        <div class="container">
+            <h2>About Our Friendship</h2>
+            <p>Our friendship is one of the most precious gifts in my life. Through all the ups and downs, laughter and tears, you've been there by my side. Your kindness, warmth, and unwavering support have shaped who I am today. True friendship like ours is rare and beautiful - a bond that transcends distance, time, and circumstances. Thank you for being the incredible person you are.</p>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Explore Our Journey Together</h2>
+            <p class="cta-subtitle">Click below to discover the beautiful memories we've shared</p>
+            <a href="gallery.html" class="cta-button">View Our Gallery</a>
+        </div>
+    </section>
+
+    <!-- Quotes Section -->
+    <section class="quotes">
+        <div class="container">
+            <h2>Friendship Quotes</h2>
+            <div class="quote-container">
+                <div class="quote active">"A best friend is someone who makes your world brighter."</div>
+                <div class="quote">"True friendship is a kind of love that never fades."</div>
+                <div class="quote">"In the sweetness of friendship let there be laughter, and sharing of pleasures."</div>
+                <div class="quote">"A friend is one soul in two bodies."</div>
+                <div class="quote">"The most beautiful discovery true friends make is that they can grow separately without growing apart."</div>
+                <div class="quote">"Friendship is born at that moment when one person says to another: What! You too? I thought I was the only one."</div>
+                <div class="quote">"A true friend is someone who sees the first tear, catches the second, and stops the third."</div>
+                <div class="quote">"Friends are the family we choose for ourselves."</div>
+            </div>
+            <button id="next-quote" class="btn">Next Quote</button>
+        </div>
+    </section>
+
+    <!-- Special Message Section -->
+    <section class="special-message">
+        <div class="container">
+            <h2>A Special Message</h2>
+            <div class="message-box">
+                <p id="typed-message">Dear best friend, thank you for being the light in my life...</p>
+                <button id="surprise-btn" class="btn">Click for Surprise!</button>
+                <div id="surprise-message" class="surprise-hidden">
+                    <h3>You Mean Everything to Me! ❤️</h3>
+                    <p>Thank you for always being there, for listening, for caring, and for being the wonderful person you are. Our friendship is a treasure I hold dear to my heart.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Made with ❤️ for my best friend</p>
+        </div>
+    </footer>
+
+    <!-- Main Navigation -->
+    <nav class="index-main-nav">
+        <a href="gallery.html" class="index-nav-link">📸 Gallery</a>
+        <a href="quotes.html" class="index-nav-link">💬 Quotes</a>
+        <a href="message.html" class="index-nav-link">💌 Message</a>
+        <a href="surprise.html" class="index-nav-link">🎉 Surprise</a>
+    </nav>
+    
+    <!-- Music and Theme Toggles -->
+    <div class="music-toggle">
+        <button id="music-btn">🎵</button>
+    </div>
+    <div class="theme-toggle">
+        <button id="theme-btn">🌙</button>
+    </div>
+    
+    <!-- Audio Player (Hidden) -->
+    <audio id="background-music" loop>
+        <source src="music/kaadhal-en-kaviye.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+    
+    <!-- Image Modal -->
+    <div id="image-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="caption"></div>
+        <div class="hearts-container"></div>
+    </div>
+</body>
+</html>

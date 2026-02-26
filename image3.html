@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory 3 | Our Beautiful Story</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body class="image-body">
+    <!-- Floating Hearts Container -->
+    <div class="floating-hearts"></div>
+    
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">🏠 Home</a>
+        <a href="gallery.html" class="nav-link">📸 Gallery</a>
+        <a href="quotes.html" class="nav-link">💬 Quotes</a>
+        <a href="message.html" class="nav-link">💌 Message</a>
+    </nav>
+
+    <!-- Individual Image Page -->
+    <section class="image-page">
+        <div class="container">
+            <div class="image-container">
+                <img src="./img/c039b79f-ceae-4d13-85e0-a9dd15745cf8.jpeg" alt="Memory 3" class="large-image">
+            </div>
+            
+            <div class="image-story">
+                <h2>Support and Comfort</h2>
+                <div class="story-text">
+                    <p>This image captures a moment of comfort and support between us. It represents the unwavering bond we share - always there for each other through thick and thin.</p>
+                    <p>Your empathy and kindness shine through in every gesture, and I feel safe knowing I have a friend who truly understands me.</p>
+                </div>
+                
+                <blockquote class="image-quote" id="quote3">
+                    "True friendship is a plant of slow growth, and must undergo and withstand the shocks of adversity, before it is entitled to the appellation." - George Washington
+                </blockquote>
+            </div>
+            
+            <div class="back-button-container">
+                <a href="gallery.html" class="back-button">← Back to Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Typing effect for the quote
+        function typeWriter(element, text, speed = 30) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Apply typing animation to the quote when page loads
+        window.addEventListener('DOMContentLoaded', function() {
+            const quoteElement = document.getElementById('quote3');
+            const fullText = '"True friendship is a plant of slow growth, and must undergo and withstand the shocks of adversity, before it is entitled to the appellation." - George Washington';
+            
+            // Add a slight delay before starting the typing effect
+            setTimeout(() => {
+                typeWriter(quoteElement, fullText, 40);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
